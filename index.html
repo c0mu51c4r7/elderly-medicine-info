@@ -15,6 +15,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+.inline-p {display:inline}
+
 </style>
 <body class="w3-black">
 
@@ -103,10 +106,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         <div class="w3-half">
           <ul class="w3-ul w3-white w3-center">
             <li class="w3-dark-grey w3-xlarge w3-padding-32">건강 상태</li>
-            <li class="w3-padding-16">수축기 혈압</li>
-            <li class="w3-padding-16">이완기 혈압</li>
-            <li class="w3-padding-16">HDL 콜레스테롤</li>
-            <li class="w3-padding-16">LDL 콜레스테롤</li>
+            <li class="w3-padding-16">수축기 혈압: <p id="systolicbp" class="inline-p"></p> </li>
+            <li class="w3-padding-16">이완기 혈압: <p id="diastolicbp" class="inline-p"></p></li>
+            <li class="w3-padding-16">LDL 콜레스테롤: <p id="ldl" class="inline-p"></p></li>
+            <li class="w3-padding-16">HDL 콜레스테롤: <p id="hdl" class="inline-p"></p></li>
           </ul>
         </div>
         <!-- End Medicine/Health tables -->

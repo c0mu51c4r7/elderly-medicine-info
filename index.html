@@ -21,10 +21,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Image in top left corner -->
-    <img src="/w3images/avatar_smoke.jpg" style="width:100%">
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
       <i class="fa fa-home w3-xxlarge"></i>
-      <p>소개</p>
+      <p>초기 화면</p>
     </a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i class="fa fa-user w3-xxlarge"></i>
@@ -43,7 +42,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">소개</a>
+      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">초기 화면</a>
       <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">환자 정보</a>
       <a href="#medicine" class="w3-bar-item w3-button" style="width:25% !important">복약 및 건강</a>
       <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">문의</a>
@@ -54,7 +53,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-padding-large" id="main">
     <!-- Header/Home -->
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-      <h1 class="w3-jumbo"> Application name here </h1>
+      <img src="./src/images/elderly.jpg" alt="Elderly person taking medicine" class="w3-image" width="992" height="1108">
       <div id='errors'>
       </div>
       <div id="loading" class="spinner">
@@ -66,7 +65,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     <!-- Patient info -->
     <div class="w3-content w3-justify w3-text-grey w3-padding-64">
-      <h2 class="w3-text-light-grey" id="about"> <p id="name">patient name here</p> </h2>
+      <h2 class="w3-text-light-grey" id="about"> <p id="name"></p> </h2>
       <hr style="width:200px" class="w3-opacity">
       <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
         <div class="w3-quarter w3-section">
@@ -145,6 +144,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <!-- Footer -->
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
       <p class="w3-medium"> (주) 바닐라, <a href="http://www.ihis.or.kr target="_blank" class="w3-hover-text-green"> 경북대학교 지능정보 연구실 </a> </p>
+      <p class="w3-medium">Powered by <a href="http://docs.smarthealthit.org" target="_blank" class="w3-hover-text-green">SMART on FHIR</a></p>
       <!-- End footer -->
     </footer>
 
@@ -172,7 +172,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       //Display 'Failed to call FHIR Service' if extractData failed
       function() {
         $('#loading').hide();
-        $('#errors').html('<p> Failed to call FHIR Service </p>');
+        $('#errors').html('<p>FHIR EHR 서버 연결에 실패하였습니다.</p>');
       }
     );
   </script>

@@ -24,8 +24,15 @@
                   });
 
         // Cerner supports dstu2
-        var medication = smart.patient.api.fetchAll({
-          type: 'Medication'
+        var medAdmin = smart.patient.api.fetchAll({
+          type: 'MedicationAdministration',
+          patient: '10002700'
+        });
+        var medOrder = smart.patient.api.fetchAll({
+          type: 'MedicationOrder'
+        });
+        var medStmt = smart.patient.api.fetchAll({
+          type: 'MedicationStatement'
         });
 
         $.when(pt, obv).fail(onError);

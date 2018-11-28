@@ -26,7 +26,7 @@
         var med = smart.patient.api.fetchAll({
           type: 'MedicationStatement',
           query: {
-            patient: '4342008'
+            patient: 4342008
           }
         });
 

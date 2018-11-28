@@ -32,6 +32,9 @@
         });
         var medOrder = smart.patient.api.search({
           type: 'MedicationOrder',
+          query: {
+            patient: '4342008'
+          }
         });
         var medStmt = smart.patient.api.fetchAll({
           type: 'MedicationStatement',

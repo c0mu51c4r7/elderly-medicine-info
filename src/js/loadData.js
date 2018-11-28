@@ -23,16 +23,16 @@
                     }
                   });
 
-        var medOrder = smart.patient.api.fetchAll({
-          type: 'MedicationOrder',
+        var med = smart.patient.api.fetchAll({
+          type: 'MedicationStatement',
           query: {
             patient: '4342008'
           }
         });
-        console.log(medOrder);
+
+        console.log(med);
 
         $.when(pt, obv).fail(onError);
-
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;

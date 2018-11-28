@@ -23,25 +23,13 @@
                     }
                   });
 
-        // Cerner supports dstu2
-        var medAdmin = smart.patient.api.fetchAll({
-          type: 'MedicationAdministration',
-          query: {
-            patient: '4342008'
-          }
-        });
-        var medOrder = smart.patient.api.search({
+        var medOrder = smart.patient.api.fetchAll({
           type: 'MedicationOrder',
           query: {
             patient: '4342008'
           }
         });
-        var medStmt = smart.patient.api.fetchAll({
-          type: 'MedicationStatement',
-          query: {
-            patient: '4342008'
-          }
-        });
+        console.log(medOrder);
 
         $.when(pt, obv).fail(onError);
 
@@ -84,9 +72,6 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          console.log(medAdmin);
-          console.log(medOrder);
-          console.log(medStmt);
           console.log(patient);
           console.log(obv);
           console.log(hdl);

@@ -22,6 +22,15 @@
                       }
                     }
                   });
+        var medAdmin = smart.patient.api.fetchAll({
+          type: 'MedicationAdministration'
+        });
+        var medOrder = smart.patient.api.fetchAll({
+          type: 'MedicationOrder'
+        });
+        var medStmt = smart.patient.api.fetchAll({
+          type: 'MedicationStatement'
+        });
 
         $.when(pt, obv).fail(onError);
 
@@ -64,7 +73,10 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          console.log(patient)
+          console.log(medAdmin);
+          console.log(medOrder);
+          console.log(medStmt);
+          console.log(patient);
           console.log(obv);
           console.log(hdl);
           console.log(hdl[0]);

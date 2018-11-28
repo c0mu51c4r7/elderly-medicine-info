@@ -23,6 +23,9 @@
                     }
                   });
 
+        var all = smart.patient.api.fetchAll()
+        console.log(all);
+
         var med = smart.patient.api.fetchAll({
           type: 'MedicationStatement',
           query: {

@@ -26,7 +26,7 @@
         // Cerner supports dstu2
         var medication = smart.patient.api.fetchAll({
           type: 'Medication'
-        ]);
+        });
 
         $.when(pt, obv).fail(onError);
 

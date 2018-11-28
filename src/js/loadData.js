@@ -76,7 +76,9 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          console.log(medication);
+          console.log(medAdmin);
+          console.log(medOrder);
+          console.log(medStmt);
           console.log(patient);
           console.log(obv);
           console.log(hdl);

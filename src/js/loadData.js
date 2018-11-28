@@ -64,6 +64,8 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+          console.log(patient)
+          console.log(obv);
           console.log(hdl);
           console.log(hdl[0]);
           console.log(ldl);

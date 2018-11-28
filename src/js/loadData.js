@@ -23,8 +23,9 @@
                     }
                   });
         var medAdmin = smart.patient.api.fetchAll({
-          type: 'MedicationAdministration'
-        });
+          type: 'MedicationAdministration',
+          query: {}
+        ]);
         var medOrder = smart.patient.api.fetchAll({
           type: 'MedicationOrder'
         });

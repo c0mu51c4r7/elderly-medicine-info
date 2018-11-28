@@ -27,19 +27,16 @@
         var medAdmin = smart.patient.api.fetchAll({
           type: 'MedicationAdministration',
           query: {
-            patient: '4342008'
+            patient: {'4342008'}
           }
         });
-        var medOrder = smart.patient.api.fetchAll({
+        var medOrder = smart.patient.api.search({
           type: 'MedicationOrder',
-          query: {
-            patient: '4342008'
-          }
         });
         var medStmt = smart.patient.api.fetchAll({
           type: 'MedicationStatement',
           query: {
-            patient: '4342008'
+            patient: {'4342008'}
           }
         });
 

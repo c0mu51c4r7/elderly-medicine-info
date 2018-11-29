@@ -23,14 +23,14 @@
                     }
                   });
 
-        var med = smart.patient.api.fetchAll({
-          type: 'MedicationStatement',
-          query: {
-            patient: 4342008
-          }
-        });
+        var medicationStatement = smart.patient.api.fetchAll({type: 'MedicationStatement'});
+        var medicationOrder = smart.patient.api.fetchAll({type: 'MedicationOrder'});
+        var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
 
-        console.log(med);
+        console.log(pt);
+        console.log(medicationStatement);
+        console.log(medicationOrder);
+        console.log(MedicationAdministration);
 
         $.when(pt, obv).fail(onError);
         $.when(pt, obv).done(function(patient, obv) {

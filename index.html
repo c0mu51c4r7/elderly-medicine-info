@@ -156,7 +156,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     extractData().then(
       //Display Patient Demographics and Observations if extractData was success
       function(p) {
-        drawVisualization(p);
+        drawVisualization(p, m);
       },
 
       //Display 'Failed to call FHIR Service' if extractData failed

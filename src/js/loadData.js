@@ -79,7 +79,10 @@
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
           console.log(medicationOrder);
-          $('#medicine1').html(medicationOrder[0].medicationCodeableConcept.text);
+          $('#medicationOrder0').html(medicationOrder[0].medicationCodeableConcept.text);
+          $('#medicationOrder1').html(medicationOrder[1].medicationCodeableConcept.text);
+          $('#medicationOrder2').html(medicationOrder[2].medicationCodeableConcept.text);
+          $('#medicationOrder3').html(medicationOrder[3].medicationCodeableConcept.text);
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);

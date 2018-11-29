@@ -90,7 +90,13 @@
           $('#medicationOrder2').html(medicationOrder[2].medicationCodeableConcept.text + " / " + medicationOrder[2].dosageInstruction[0].text);
           $('#medicationOrder3').html(medicationOrder[3].medicationCodeableConcept.text + " / " + medicationOrder[3].dosageInstruction[0].text);
 
-          $('#medicationOrder').append("<li class='w3-padding-16'>" + medicationOrder[0].medicationCodeableConcept.text + " / " + medicationOrder[0].dosageInstruction[0].text + "</li>");
+          medicationOrder.forEach(function(m) {
+            $('#medicationOrder').append("<li class='w3-padding-16'>" +
+            m.medicationCodeableConcept.text + " / " +
+            m.dosageInstruction[0].text + "</li>");
+          })
+
+          // $('#medicationOrder').append("<li class='w3-padding-16'>" + medicationOrder[0].medicationCodeableConcept.text + " / " + medicationOrder[0].dosageInstruction[0].text + "</li>");
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);

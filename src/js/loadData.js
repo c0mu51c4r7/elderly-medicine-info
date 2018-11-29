@@ -27,10 +27,25 @@
         var medicationOrder = smart.patient.api.fetchAll({type: 'MedicationOrder'});
         var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
 
-        console.log(pt);
-        console.log(medicationStatement);
-        console.log(medicationOrder);
-        console.log(MedicationAdministration);
+        // console.log(pt);
+        // console.log(medicationStatement);
+        // console.log(medicationOrder);
+        // console.log(MedicationAdministration);
+
+        $.when(pt, medicationStatement).fail(onError);
+        $.when(pt, medicationStatement).done(function(patient, medicationStatement) {
+          console.log(medicationStatement);
+        });
+
+        $.when(pt, medicationOrder).fail(onError);
+        $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
+          console.log(medicationOrder);
+        });
+
+        $.when(pt, MedicationAdministration).fail(onError);
+        $.when(pt, MedicationAdministration).done(function(patient, MedicationAdministration) {
+          console.log(MedicationAdministration);
+        });
 
         $.when(pt, obv).fail(onError);
         $.when(pt, obv).done(function(patient, obv) {

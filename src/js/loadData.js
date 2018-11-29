@@ -27,26 +27,6 @@
         var medicationOrder = smart.patient.api.fetchAll({type: 'MedicationOrder'});
         var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
 
-        // console.log(pt);
-        // console.log(medicationStatement);
-        // console.log(medicationOrder);
-        // console.log(MedicationAdministration);
-
-        $.when(pt, medicationStatement).fail(onError);
-        $.when(pt, medicationStatement).done(function(patient, medicationStatement) {
-          console.log(medicationStatement);
-        });
-
-        $.when(pt, medicationOrder).fail(onError);
-        $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
-          console.log(medicationOrder);
-        });
-
-        $.when(pt, MedicationAdministration).fail(onError);
-        $.when(pt, MedicationAdministration).done(function(patient, MedicationAdministration) {
-          console.log(MedicationAdministration);
-        });
-
         $.when(pt, obv).fail(onError);
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
@@ -96,6 +76,23 @@
 
           ret.resolve(p);
         });
+
+        $.when(pt, medicationOrder).fail(onError);
+        $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
+          console.log(medicationOrder);
+          p.medicationOrder = medicationOrder;
+        });
+
+        // $.when(pt, MedicationAdministration).fail(onError);
+        // $.when(pt, MedicationAdministration).done(function(patient, MedicationAdministration) {
+        //   console.log(MedicationAdministration);
+        // });
+        //
+        // $.when(pt, medicationStatement).fail(onError);
+        // $.when(pt, medicationStatement).done(function(patient, medicationStatement) {
+        //   console.log(medicationStatement);
+        // });
+
       } else {
         onError();
       }
@@ -113,6 +110,7 @@
       gender: {value: ''},
       birthdate: {value: ''},
       height: {value: ''},
+      weight: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
@@ -162,6 +160,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $.('#medicine1').html(p.medicationOrder[0].medicationCodeableConcept.text);
   };
 
 })(window);

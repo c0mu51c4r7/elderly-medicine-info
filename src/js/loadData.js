@@ -161,6 +161,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    console.log(m);
     $('#medicine1').html(m.medicationOrder[0].medicationCodeableConcept.text);
   };
 

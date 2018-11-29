@@ -79,10 +79,7 @@
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
           console.log(medicationOrder);
-          var m = defaultMedicationOrder();
-          m.medicationOrder = medicationOrder;
-          console.log(m);
-          ret.resolve(m);
+          $('#medicine1').html(medicationOrder[0].medicationCodeableConcept.text);
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);
@@ -120,11 +117,11 @@
     };
   }
 
-  function defaultMedicationOrder(){
-    return {
-      medicationOrder: {value: ''}
-    };
-  }
+  // function defaultMedicationOrder(){
+  //   return {
+  //     medicationOrder: {value: ''}
+  //   };
+  // }
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
@@ -170,9 +167,9 @@
     $('#hdl').html(p.hdl);
   };
 
-  window.medicationOrderVisualization = function(m) {
-    console.log(m);
-    $('#medicine1').html(m.medicationOrder[0].medicationCodeableConcept.text);
-  }
+  // window.medicationOrderVisualization = function(m) {
+  //   console.log(m);
+  //   $('#medicine1').html(m.medicationOrder[0].medicationCodeableConcept.text);
+  // }
 
 })(window);

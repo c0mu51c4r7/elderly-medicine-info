@@ -79,8 +79,9 @@
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
           console.log(medicationOrder);
-          var m = {}
+          var m = defaultMedicationOrder();
           m.medicationOrder = medicationOrder;
+          console.log(m);
           ret.resolve(m);
         });
 
@@ -116,6 +117,12 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+    };
+  }
+
+  function defaultMedicationOrder(){
+    return {
+      medicationOrder: {value: ''}
     };
   }
 

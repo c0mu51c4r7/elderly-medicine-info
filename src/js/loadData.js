@@ -85,9 +85,9 @@
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
           console.log(medicationOrder);
           $('#medicationOrder0').html(medicationOrder[0].medicationCodeableConcept.text + " / " + medicationOrder[0].dosageInstruction[0].text);
-          $('#medicationOrder1').html(medicationOrder[1].medicationCodeableConcept.text + " / " + medicationOrder[1].dosageInstruction[1].text);
-          $('#medicationOrder2').html(medicationOrder[2].medicationCodeableConcept.text + " / " + medicationOrder[2].dosageInstruction[2].text);
-          $('#medicationOrder3').html(medicationOrder[3].medicationCodeableConcept.text + " / " + medicationOrder[3].dosageInstruction[4].text);
+          $('#medicationOrder1').html(medicationOrder[1].medicationCodeableConcept.text + " / " + medicationOrder[1].dosageInstruction[0].text);
+          $('#medicationOrder2').html(medicationOrder[2].medicationCodeableConcept.text + " / " + medicationOrder[2].dosageInstruction[0].text);
+          $('#medicationOrder3').html(medicationOrder[3].medicationCodeableConcept.text + " / " + medicationOrder[3].dosageInstruction[0].text);
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);

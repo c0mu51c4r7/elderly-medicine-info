@@ -22,9 +22,8 @@
                       }
                     }
                   });
-
-        var medicationStatement = smart.patient.api.fetchAll({type: 'MedicationStatement'});
         var medicationOrder = smart.patient.api.fetchAll({type: 'MedicationOrder'});
+        var medicationStatement = smart.patient.api.fetchAll({type: 'MedicationStatement'});
         var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
 
         $.when(pt, obv).fail(onError);
@@ -80,7 +79,8 @@
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
           console.log(medicationOrder);
-          p.medicationOrder = medicationOrder;
+          var m = {}
+          m.medicationOrder = medicationOrder;
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);
@@ -160,7 +160,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#medicine1').html(p.medicationOrder[0].medicationCodeableConcept.text);
+    $('#medicine1').html(m.medicationOrder[0].medicationCodeableConcept.text);
   };
 
 })(window);

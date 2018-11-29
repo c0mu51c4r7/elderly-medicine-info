@@ -160,7 +160,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $.('#medicine1').html(p.medicationOrder[0].medicationCodeableConcept.text);
+    $('#medicine1').html(p.medicationOrder[0].medicationCodeableConcept.text);
   };
 
 })(window);

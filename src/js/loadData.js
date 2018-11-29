@@ -71,25 +71,19 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          console.log(patient);
-          console.log(obv);
-          console.log(hdl);
-          console.log(hdl[0]);
-          console.log(ldl);
-          console.log(ldl[0]);
+          // console.log(patient);
+          // console.log(obv);
+          // console.log(hdl);
+          // console.log(hdl[0]);
+          // console.log(ldl);
+          // console.log(ldl[0]);
 
           ret.resolve(p);
         });
 
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
-          console.log(medicationOrder);
-
-          $('#medicationOrder0').html(medicationOrder[0].medicationCodeableConcept.text + " / " + medicationOrder[0].dosageInstruction[0].text);
-          $('#medicationOrder1').html(medicationOrder[1].medicationCodeableConcept.text + " / " + medicationOrder[1].dosageInstruction[0].text);
-          $('#medicationOrder2').html(medicationOrder[2].medicationCodeableConcept.text + " / " + medicationOrder[2].dosageInstruction[0].text);
-          $('#medicationOrder3').html(medicationOrder[3].medicationCodeableConcept.text + " / " + medicationOrder[3].dosageInstruction[0].text);
-
+          // console.log(medicationOrder);
           medicationOrder.forEach(function(m) {
             $('#medicationOrder').append("<li class='w3-padding-16'>" +
             m.medicationCodeableConcept.text + " / " +

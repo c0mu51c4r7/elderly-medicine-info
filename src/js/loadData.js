@@ -22,9 +22,14 @@
                       }
                     }
                   });
-        var medicationOrder = smart.patient.api.fetchAll({type: 'MedicationOrder'});
-        var medicationStatement = smart.patient.api.fetchAll({type: 'MedicationStatement'});
-        var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
+        var medicationOrder = smart.patient.api.fetchAll({
+          type: 'MedicationOrder',
+          query: {
+            _count: 4
+          }
+        });
+        // var medicationStatement = smart.patient.api.fetchAll({type: 'MedicationStatement'});
+        // var MedicationAdministration = smart.patient.api.fetchAll({type: 'MedicationAdministration'});
 
         $.when(pt, obv).fail(onError);
         $.when(pt, obv).done(function(patient, obv) {

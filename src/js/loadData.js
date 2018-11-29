@@ -154,7 +154,7 @@
     }
   }
 
-  window.drawVisualization = function(p, m) {
+  window.patientVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
     $('#name').html(p.lname + " " + p.fname);
@@ -168,8 +168,11 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+  };
+
+  window.medicationOrderVisualization = function(m) {
     console.log(m);
     $('#medicine1').html(m.medicationOrder[0].medicationCodeableConcept.text);
-  };
+  }
 
 })(window);

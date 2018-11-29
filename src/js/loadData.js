@@ -81,6 +81,7 @@
           console.log(medicationOrder);
           var m = {}
           m.medicationOrder = medicationOrder;
+          ret.resolve(m);
         });
 
         // $.when(pt, MedicationAdministration).fail(onError);
